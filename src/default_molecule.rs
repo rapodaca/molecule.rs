@@ -433,6 +433,29 @@ mod tests {
     }
 
     #[test]
+    fn charge_given_foo() {
+        let molecule = DefaultMolecule::build(spec::Molecule {
+            atoms: vec![
+                spec::Atom {
+                    element: Element::C, hydrogens: 2, ion: 0, isotope: None,
+                    parity: None
+                },
+                spec::Atom {
+                    element: Element::O, hydrogens: 2, ion: 0, isotope: None,
+                    parity: None
+                }
+            ],
+            bonds: vec![
+                spec::Bond {
+                    sid: 0, tid: 1, order: BondOrder::Double, parity: None
+                }
+            ]
+        }).unwrap();
+
+        assert_eq!(molecule.charge(&0), Ok(0));
+    }
+
+    #[test]
     fn atom_parity_given_invalid_id() {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![

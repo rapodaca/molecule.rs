@@ -125,6 +125,9 @@ impl<'a> Atom {
         let nonbonding_electrons =
             self.nonbonding_electrons as i16 -
             bond.multiplicity() as i16;
+        let bonding_electrons =
+            self.bonding_electrons as i16 +
+            bond.multiplicity() as i16;
 
         if nonbonding_electrons < 0 {
             Err(Error::HypervalentAtom)   
@@ -132,6 +135,7 @@ impl<'a> Atom {
             self.bonds.push(bond);
             self.neighbors.push(tid);
             self.nonbonding_electrons = nonbonding_electrons as u8;
+            self.bonding_electrons = bonding_electrons as u8;
 
             Ok(())
         }
@@ -378,6 +382,17 @@ mod tests {
         }).unwrap();
 
         assert_eq!(atom.charge(), -1);
+    }
+
+    #[test]
+    fn charge_given_triple_bond() {
+        let mut atom = Atom::build(spec::Atom {
+            element: Element::C, hydrogens: 1, ion: 0, isotope: None,
+            parity: None
+        }).unwrap();
+
+        assert_eq!(atom.add_bond(1, BondOrder::Triple, None), Ok(()));
+        assert_eq!(atom.charge(), 0);
     }
 
     #[test]
