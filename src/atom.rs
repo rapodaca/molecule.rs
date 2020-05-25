@@ -180,8 +180,7 @@ mod tests {
     #[test]
     fn element_given_hydrogen() {
         let atom = Atom::build(spec::Atom {
-            element: Element:: H, hydrogens: 0, ion: 0, isotope: None,
-            parity: None
+            element: Element:: H, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.element(), Element::H);
@@ -190,8 +189,7 @@ mod tests {
     #[test]
     fn isotope_given_hydrogen() {
         let atom = Atom::build(spec::Atom {
-            element: Element:: H, hydrogens: 0, ion: 0, isotope: None,
-            parity: None
+            element: Element:: H, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.isotope(), None);
@@ -210,8 +208,7 @@ mod tests {
     #[test]
     fn electrons_given_carbon() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 0, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.electrons(), 4);
@@ -272,8 +269,7 @@ mod tests {
     #[test]
     fn hydrogens_given_carbon() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 0, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.hydrogens(), 0);
@@ -327,8 +323,7 @@ mod tests {
     #[test]
     fn charge_given_carbon() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 0, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.charge(), 0);
@@ -337,8 +332,7 @@ mod tests {
     #[test]
     fn charge_given_methyl_radical() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 3, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.charge(), 0);
@@ -347,8 +341,7 @@ mod tests {
     #[test]
     fn charge_given_methane() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 4, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.charge(), 0);
@@ -387,8 +380,7 @@ mod tests {
     #[test]
     fn charge_given_triple_bond() {
         let mut atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 1, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 1, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.add_bond(1, BondOrder::Triple, None), Ok(()));
@@ -398,8 +390,7 @@ mod tests {
     #[test]
     fn bond_order_given_methane() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 3, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.bond_order(&1), 0);
@@ -408,8 +399,7 @@ mod tests {
     #[test]
     fn bond_order_given_ethane() {
         let mut atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 3, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.add_bond(1, BondOrder::Single, None), Ok(()));
@@ -419,8 +409,7 @@ mod tests {
     #[test]
     fn bond_order_given_ethene() {
         let mut atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 2, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 2, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.add_bond(1, BondOrder::Double, None), Ok(()));
@@ -440,8 +429,7 @@ mod tests {
     #[test]
     fn bond_parity_given_ethane_with_parity() {
         let mut atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 3, ..Default::default()
         }).unwrap();
 
         assert_eq!(
@@ -454,8 +442,7 @@ mod tests {
     #[test]
     fn atom_parity_given_methane() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 2, ion: 0, isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 2, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.atom_parity(), None);
@@ -474,8 +461,7 @@ mod tests {
     #[test]
     fn degree_given_methane() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 4, ion: 0,  isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 4, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.degree(), 0);
@@ -484,8 +470,7 @@ mod tests {
     #[test]
     fn degree_given_ethane() {
         let mut atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 3, ion: 0,  isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 3, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.add_bond(1, BondOrder::Single, None), Ok(()));
@@ -495,8 +480,7 @@ mod tests {
     #[test]
     fn neighbors_given_methane() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 4, ion: 0,  isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 4, ..Default::default()
         }).unwrap();
         let neighbors = atom.neighbors().collect::<Vec<_>>();
 
@@ -506,8 +490,7 @@ mod tests {
     #[test]
     fn neighbors_given_propane() {
         let mut atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 2, ion: 0,  isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 2, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.add_bond(1, BondOrder::Single, None), Ok(()));
@@ -521,8 +504,7 @@ mod tests {
     #[test]
     fn has_edge_given_methane() {
         let atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 2, ion: 0,  isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 2, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.has_edge(1), false);
@@ -531,8 +513,7 @@ mod tests {
     #[test]
     fn has_edge_given_ethane() {
         let mut atom = Atom::build(spec::Atom {
-            element: Element::C, hydrogens: 2, ion: 0,  isotope: None,
-            parity: None
+            element: Element::C, hydrogens: 2, ..Default::default()
         }).unwrap();
 
         assert_eq!(atom.add_bond(1, BondOrder::Single, None), Ok(()));

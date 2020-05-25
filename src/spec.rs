@@ -2,6 +2,7 @@ use crate::element::Element;
 use crate::bond_order::BondOrder;
 use crate::parity::Parity;
 
+#[derive(Default)]
 pub struct Atom {
     pub element: Element,
     pub hydrogens: u8,
@@ -10,6 +11,7 @@ pub struct Atom {
     pub parity: Option<Parity>
 }
 
+#[derive(Default)]
 pub struct Bond {
     pub sid: usize,
     pub tid: usize,

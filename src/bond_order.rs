@@ -5,3 +5,9 @@ pub enum BondOrder {
     Double,
     Triple
 }
+
+impl Default for BondOrder {
+    fn default() -> Self {
+        Self::Single
+    }
+}

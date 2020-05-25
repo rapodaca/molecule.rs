@@ -15,6 +15,12 @@ pub enum Element {
     Ds, Rg, Cn, Nh, Fl, Mc, Lv, Ts, Og      // 11
 }
 
+impl Default for Element {
+    fn default() -> Self {
+        Self::C
+    }
+}
+
 impl Element {
     pub fn valence_electrons(&self) -> u8 {
         match self {

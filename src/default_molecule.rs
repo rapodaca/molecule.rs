@@ -226,8 +226,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 5, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 5, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -241,18 +240,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0,  isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0,  isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 2, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 2, tid: 1, ..Default::default() }
             ]
         });
 
@@ -264,18 +259,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 2, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 2, ..Default::default() }
             ]
         });
 
@@ -287,8 +278,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -302,8 +292,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 0, ion: 0,  isotope: None,
-                    parity: None
+                    element: Element::C, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -317,8 +306,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -332,8 +320,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 0, ion: 0,
-                    isotope: Some(13), parity: None
+                    element: Element::C, isotope: Some(13), ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -347,8 +334,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 0, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 0, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -362,8 +348,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::He, hydrogens: 0, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::He, hydrogens: 0, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -377,8 +362,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -392,8 +376,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -407,8 +390,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -437,12 +419,10 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 2, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 2, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::O, hydrogens: 2, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::O, hydrogens: 2, ..Default::default()
                 }
             ],
             bonds: vec![
@@ -460,8 +440,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -494,28 +473,19 @@ mod tests {
                     parity: Some(Parity::Positive)
                 },
                 spec::Atom {
-                    element: Element::Br, hydrogens: 0, ion: 0,isotope: None,
-                     parity: None
+                    element: Element::Br, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::Cl, hydrogens: 0, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::Cl, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::F, hydrogens: 0, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::F, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                },
-                spec::Bond {
-                    sid: 0, tid: 2, order: BondOrder::Single, parity: None
-                },
-                spec::Bond {
-                    sid: 0, tid: 3, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() },
+                spec::Bond { sid: 0, tid: 2, ..Default::default() },
+                spec::Bond { sid: 0, tid: 3, ..Default::default() }
             ]
         }).unwrap();
 
@@ -527,18 +497,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -550,18 +516,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -573,12 +535,10 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -592,12 +552,10 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 2, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 2, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 2, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 2, ..Default::default()
                 }
             ],
             bonds: vec![
@@ -615,18 +573,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -638,18 +592,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -661,18 +611,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -684,18 +630,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -707,12 +649,10 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
@@ -741,8 +681,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -766,18 +705,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -799,18 +734,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -833,8 +764,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -860,18 +790,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
         let edges = molecule.edges().collect::<Vec<_>>();
@@ -894,8 +820,7 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 4, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 4, ..Default::default()
                 }
             ],
             bonds: vec![ ]
@@ -920,18 +845,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -954,18 +875,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
         let neighbors = molecule.neighbors(&0).unwrap().collect::<Vec<_>>();;
@@ -978,18 +895,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -1001,18 +914,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
@@ -1024,25 +933,18 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom { 
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 2, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 2, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                },
-                spec::Bond {
-                    sid: 1, tid: 2, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() },
+                spec::Bond { sid: 1, tid: 2, ..Default::default() }
             ]
         }).unwrap();
 
@@ -1054,18 +956,14 @@ mod tests {
         let molecule = DefaultMolecule::build(spec::Molecule {
             atoms: vec![
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 },
                 spec::Atom {
-                    element: Element::C, hydrogens: 3, ion: 0, isotope: None,
-                    parity: None
+                    element: Element::C, hydrogens: 3, ..Default::default()
                 }
             ],
             bonds: vec![
-                spec::Bond {
-                    sid: 0, tid: 1, order: BondOrder::Single, parity: None
-                }
+                spec::Bond { sid: 0, tid: 1, ..Default::default() }
             ]
         }).unwrap();
 
